@@ -1,0 +1,311 @@
+/* ===================================
+   LIVER MANUAL
+   style.css
+=================================== */
+
+:root{
+    --bg:#0f1117;
+    --bg2:#171a22;
+    --card:#1f2430;
+    --accent:#f6b93b;
+    --accent-dark:#d89f2f;
+    --text:#f5f6fa;
+    --sub:#b2bec3;
+    --border:#2f3640;
+    --success:#2ecc71;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:
+    "Yu Gothic",
+    "Hiragino Sans",
+    sans-serif;
+    line-height:1.8;
+}
+
+/* ======================
+   ナビゲーション
+====================== */
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:260px;
+    height:100vh;
+    background:var(--bg2);
+    border-right:1px solid var(--border);
+    padding:30px 20px;
+    z-index:999;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:var(--accent);
+    margin-bottom:10px;
+}
+
+.logo-sub{
+    color:var(--sub);
+    font-size:12px;
+    margin-bottom:40px;
+}
+
+.nav{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.nav a{
+    text-decoration:none;
+    color:var(--text);
+    padding:12px 15px;
+    border-radius:10px;
+    transition:.2s;
+}
+
+.nav a:hover{
+    background:var(--card);
+    color:var(--accent);
+}
+
+/* ======================
+   メイン
+====================== */
+
+.main{
+    margin-left:260px;
+    min-height:100vh;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 30px;
+}
+
+/* ======================
+   ヒーロー
+====================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:64px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:var(--sub);
+    font-size:20px;
+}
+
+.philosophy{
+    margin-top:50px;
+    display:grid;
+    gap:20px;
+}
+
+.philosophy-card{
+    background:var(--card);
+    padding:25px;
+    border-radius:15px;
+    border-left:4px solid var(--accent);
+}
+
+/* ======================
+   セクション
+====================== */
+
+.section{
+    margin-bottom:80px;
+}
+
+.section-number{
+    color:var(--accent);
+    font-size:14px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.section-title{
+    font-size:42px;
+    margin:10px 0 30px;
+}
+
+.section-description{
+    color:var(--sub);
+    margin-bottom:40px;
+}
+
+/* ======================
+   カード
+====================== */
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+}
+
+.card h3{
+    color:var(--accent);
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#dfe6e9;
+}
+
+/* ======================
+   注意項目
+====================== */
+
+.warning-card{
+    background:var(--card);
+    border-left:5px solid var(--accent);
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:25px;
+}
+
+.warning-card h3{
+    margin-bottom:15px;
+    color:var(--accent);
+}
+
+.warning-card p{
+    margin-bottom:12px;
+}
+
+/* ======================
+   Q&A
+====================== */
+
+details{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:15px;
+    margin-bottom:15px;
+    overflow:hidden;
+}
+
+summary{
+    cursor:pointer;
+    padding:20px;
+    font-size:18px;
+    font-weight:bold;
+    list-style:none;
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary:hover{
+    background:#262c3b;
+}
+
+.answer{
+    padding:0 20px 20px;
+    color:#dfe6e9;
+}
+
+/* ======================
+   ボタン
+====================== */
+
+.button-group{
+    margin-top:50px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    color:#111;
+    background:var(--accent);
+    padding:12px 24px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.btn:hover{
+    background:var(--accent-dark);
+}
+
+/* ======================
+   フッター
+====================== */
+
+.footer{
+    text-align:center;
+    color:var(--sub);
+    padding:40px 0;
+}
+
+/* ======================
+   スマホ
+====================== */
+
+@media(max-width:900px){
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:80px 20px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+    .button-group{
+        flex-direction:column;
+        gap:15px;
+    }
+
+}
