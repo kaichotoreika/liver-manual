@@ -319,27 +319,28 @@ Mobile
 
 @media(max-width:900px){
 
-   .sidebar{
-    position:fixed;
-    top:0;
-    left:0;
+    .sidebar{
+        /* 固定配置を解除して普通のブロックにする */
+        position: static; 
+        
+        /* 横幅を画面いっぱいに広げる */
+        width: 100%;      
+        height: auto;     
+        
+        /* スマホ用の枠線調整（右の線を消して、下に線を入れるなどはお好みで） */
+        border-right: none; 
+        border-bottom: 1px solid var(--border);
+        border-top: 6px solid var(--accent);
 
-    width:280px;
-    height:100vh;
+        padding: 35px 25px;
+        overflow-y: visible;
+    }
 
-    background:#ffffff;
-    border-right:1px solid var(--border);
-    border-top:6px solid var(--accent);
-
-    padding:35px 25px;
-
-    overflow-y:auto;
-    z-index:999;
-}
     .main{
         margin-left:0;
     }
-
+    /* 以下省略 */
+}
     .hero{
         min-height:auto;
         padding:80px 0;
